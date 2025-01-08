@@ -5,16 +5,18 @@
     <img src="image3.png"><br>
 </center>
 * 
-# Fake zoom site and camera access request
+### Fake zoom site and camera access request
 <center>
     <img src="image4.png"><br>
 </center>
 ### Tool to capture a user's camera
 #### For arch based distros and Debian distros
 ### For Arch based distros
+
 ```
 sudo pacman -S gcc
 ```
+
 #### For debian based distros
 ```
 sudo apt -y install g++
