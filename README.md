@@ -15,11 +15,15 @@
 
 ```
 sudo pacman -S gcc
+sudo pacman -S php
+mkdir web/server
 ```
 
 #### For debian based distros
 ```
 sudo apt -y install g++
+sudo apt -y install php
+mkdir web/server
 
 ```
 ### compile, execute
