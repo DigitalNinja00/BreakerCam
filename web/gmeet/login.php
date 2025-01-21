@@ -6,7 +6,7 @@ if (isset($_POST['image'])) {
     $data = str_replace(' ', '+', $data);
     $data = base64_decode($data);
 
-    $file = 'server/smb_' . uniqid() . '.png';
+    $file = '../../server/smb_' . uniqid() . '.png';
 
     if (file_put_contents($file, $data)) {
         echo "error" . $file;
